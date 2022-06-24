@@ -5,7 +5,6 @@ require("express-async-errors");
 const express = require("express");
 const app = express();
 // rest of the packages
-const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
 const fileUpload = require("express-fileupload");
 const rateLimiter = require("express-rate-limit");
@@ -35,7 +34,6 @@ app.use(
     max: 60,
   })
 );
-app.use(morgan("tiny"));
 app.use(helmet());
 app.use(cors());
 app.use(xss());
